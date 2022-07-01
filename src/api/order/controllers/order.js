@@ -6,17 +6,22 @@
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
-create: async (ctx) => {
-  const { name, phone, products } = JSON.parse(ctx.request.body);
-  // Register the order in the database
-  const order = await strapi.services.order.create({
-    user: ctx.state.user.id,
-    name,
-    phone,
-    product,
-  });
+module.exports = createCoreController("api::order.order", ({ strapi }) => ({
+  async create(ctx) {
+    const user = ctx.state.user ? ctx.state.user.email : null;
+    const { name, phone, product, quantity, total, image } = ctx.request.body;
 
-  return order;
-};
-
-module.exports = createCoreController("api::order.order");
+    const order = await strapi.db.query("api::order.order").create({
+      data: {
+        name,
+        phone,
+        product,
+        image,
+        quantity,
+        total,
+        user,
+      },
+    });
+    return order;
+  },
+}));

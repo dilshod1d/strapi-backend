@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sleeves",
+  "info": {
+    "singularName": "sleeve",
+    "pluralName": "sleeves",
+    "displayName": "Sleeve"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sleeve_type": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "sleeve"
+    }
+  }
+}

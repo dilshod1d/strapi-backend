@@ -10,18 +10,37 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "short_description": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "media": {
       "type": "media",
@@ -29,7 +48,12 @@
       "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "categories": {
       "type": "relation",
@@ -37,13 +61,47 @@
       "target": "api::category.category",
       "inversedBy": "products"
     },
-    "color_name": {
+    "slug": {
       "type": "string",
+      "required": true,
       "unique": false,
-      "required": false
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
-    "color_code": {
-      "type": "string"
+    "sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::size.size",
+      "inversedBy": "products"
+    },
+    "series": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::series.series",
+      "inversedBy": "products"
+    },
+    "sleeve": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sleeve.sleeve",
+      "inversedBy": "products"
+    },
+    "color": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::color.color",
+      "inversedBy": "products"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }
