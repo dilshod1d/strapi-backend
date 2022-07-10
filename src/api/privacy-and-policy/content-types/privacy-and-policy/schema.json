@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_and_policies",
+  "info": {
+    "singularName": "privacy-and-policy",
+    "pluralName": "privacy-and-policies",
+    "displayName": "Privacy&Policy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "header": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "default": "Privacy and Policy"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "json"
+    }
+  }
+}

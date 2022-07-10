@@ -15,11 +15,13 @@
     "name": {
       "type": "string",
       "required": true,
-      "maxLength": 50
+      "maxLength": 50,
+      "pluginOptions": {}
     },
     "phone": {
       "type": "string",
-      "maxLength": 13
+      "maxLength": 13,
+      "pluginOptions": {}
     },
     "products": {
       "type": "relation",
@@ -33,10 +35,12 @@
         "confirmed",
         "rejected"
       ],
-      "default": "pending"
+      "default": "pending",
+      "pluginOptions": {}
     },
     "details": {
-      "type": "json"
+      "type": "json",
+      "pluginOptions": {}
     },
     "user": {
       "type": "relation",

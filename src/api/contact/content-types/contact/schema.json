@@ -1,14 +1,14 @@
 {
-  "kind": "collectionType",
-  "collectionName": "blogs",
+  "kind": "singleType",
+  "collectionName": "contacts",
   "info": {
-    "singularName": "blog",
-    "pluralName": "blogs",
-    "displayName": "Blog",
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "title": {
+    "working_hours": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -25,37 +25,42 @@
       "type": "string",
       "required": true
     },
-    "content": {
+    "address": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "richtext",
+      "type": "string",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "slug": {
+    "phone": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
       "type": "string",
+      "required": true
+    },
+    "cellphone": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "email",
       "required": true,
-      "unique": false
+      "maxLength": 30
     }
   }
 }
